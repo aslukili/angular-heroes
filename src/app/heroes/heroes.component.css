@@ -1,0 +1,3 @@
+.selected {
+    @apply border-2 shadow-lg shadow-slate-800;
+}
