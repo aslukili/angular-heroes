@@ -1,0 +1,6 @@
+<h2>Top Heroes</h2>
+<div class="flex gap-3">
+  <a class="bg-slate-300" *ngFor="let hero of heroes" routerLink="/detail/{{hero.id}}">
+    {{ hero.name }}
+  </a>
+</div>

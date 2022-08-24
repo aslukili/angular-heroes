@@ -22,10 +22,10 @@ export class HeroesComponent implements OnInit {
 
 
   // when clicking a hero, it'll be the selectedHero variable
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
-    this.messageService.add(`You have selected ${hero.id}`);
-  }
+  // onSelect(hero: Hero): void {
+  //   this.selectedHero = hero;
+  //   this.messageService.add(`You have selected ${hero.id}`);
+  // }
 
   // retrieving heroes from the service
   getHeroes(): void {

@@ -2,6 +2,10 @@
   <h1 class="text-3xl font-bold text-red-500">
     {{ title }}
   </h1>
-  <app-heroes></app-heroes>
+  <nav class="flex gap-5">
+    <a routerLink="/heroes" class="underline text-blue-500">heroes</a>
+    <a routerLink="/dashboard" class="underline text-blue-500">dashboard</a>
+  </nav>
+  <router-outlet></router-outlet>
   <app-messages></app-messages>
 </div>
