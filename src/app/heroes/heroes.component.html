@@ -1,10 +1,18 @@
 <h2>List of negoes</h2>
+<div class="bg-gray-300 shadow-md flex flex-col">
+  <label for="new-hero">add new hero</label>
+  <input type="text" class="border-2 border-blue-700" id="new-hero" #heroName />
+  <button type="button" class="bg-sky-300 " (click)="add(heroName.value); heroName.value = ''">
+    add hero
+  </button>
+</div>
+
 <ul class="text-gray-700 font-normal">
   <li class="my-3" *ngFor="let hero of heroes">
-    <a routerLink="/detail/{{hero.id}}">
+    <a routerLink="/detail/{{ hero.id }}">
       <span class="bg-green-300">{{ hero.id }}</span>
       <span class="bg-yellow-300">{{ hero.name }}</span>
     </a>
+    <button type="button" class="text-red-500" (click)="delete(hero)">delete</button>
   </li>
 </ul>
-
