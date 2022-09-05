@@ -78,6 +78,19 @@ export class HeroService {
     )
   }
 
+  searchHeroes(term: String): Observable<Hero[]> {
+    if (!term.trim()) {
+      // returning an emty array if no serch term is provided
+      return of([]);
+    }
+    return this.http.get<Hero[]>(`${this.heroesUrl}/?name=${term}`).pipe(
+      tap(x => x.length ?
+        this.log(`found heroes matching "${term}"`) :
+        this.log(`no heroes matching ${term}`)),
+      catchError(this.handleError<Hero[]>('searchHeroes', []))
+      );
+  }
+
   // instead of calling message service frequently, we'll add a log method.
   private log(message: string) {
     this.messageService.add(`HeroService:  ${message}`);
